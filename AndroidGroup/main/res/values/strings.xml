@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AndroidGroup</string>
+
+    <string name="news">To start working with the program, first visit Edit|Dictionaries to add some directory paths where to search for the dictionary files, set up various Wikipedia sites or other sources, adjust dictionary order or create dictionary groups.....</string>
+
+    <string name="details">To start working with the program, first visit Edit|Dictionaries to add some directory paths where to search for the dictionary files, set up various Wikipedia sites or other sources, adjust dictionary order or create dictionary groups.
+        And then you're ready to look up your words! You can do that in this window by using a pane to the left, or you can look up words from other active applications.</string>
+</resources>
