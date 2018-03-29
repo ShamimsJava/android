@@ -1,7 +1,10 @@
 /*
 * Md. Shamim Sarker
-* 27/03/2018
-* Basic Hello World Application
+* 28/03/2018
+* Layout Details
+* Linear Layout
+* Relative Layout
+* Table Layout
 */
 
 linear_layout_horizontal.xml
