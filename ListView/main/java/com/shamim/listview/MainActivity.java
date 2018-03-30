@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     String countryList[] = {"Bangladesh", "India", "China", "Australia", "Portugle", "America", "New Zealand"};
 
     int flags[] = {
-            android.R.mipmap.sym_def_app_icon,
+            R.drawable.bd,
             android.R.mipmap.sym_def_app_icon,
             android.R.mipmap.sym_def_app_icon,
             android.R.mipmap.sym_def_app_icon,
