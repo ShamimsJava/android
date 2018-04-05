@@ -1,7 +1,7 @@
 /*
 * Md. Shamim Sarker
 * 03/04/2018
-* List view
+* List view ArrayAdapter and Search option
 */
 
 strings.xml
@@ -39,6 +39,12 @@ activity_main.xml
     android:orientation="vertical"
     android:padding="10dp"
     android:background="#9f8686">
+
+    <SearchView
+        android:id="@+id/searchViewId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search"></SearchView>
 
     <ListView
         android:id="@+id/listViewId"
@@ -90,11 +96,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     ListView listView;
+    SearchView searchView;
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,10 +111,29 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listView = findViewById(R.id.listViewId);
+        searchView = findViewById(R.id.searchViewId);
+
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+
+                adapter.getFilter().filter(newText);
+
+                return false;
+            }
+        });
+
+
 
         final String[] countryNames = getResources().getStringArray(R.array.country_names);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this, R.layout.sample_view, R.id.textViewId, countryNames);
+        adapter = new ArrayAdapter<String>(MainActivity.this, R.layout.sample_view, R.id.textViewId, countryNames);
 
         listView.setAdapter(adapter);
 
